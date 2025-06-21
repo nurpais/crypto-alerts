@@ -1,0 +1,32 @@
+
+---
+
+## 🧾 `.gitignore`
+
+```gitignore
+# dependencies
+node_modules
+.env
+.env.local
+.env.*.local
+
+# build
+dist
+build
+
+# misc
+.DS_Store
+*.log
+
+# TypeScript
+*.tsbuildinfo
+
+# Vite
+frontend/.vite
+
+# VSCode
+.vscode
+
+# IDE
+.idea
+*.swp

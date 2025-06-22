@@ -3,6 +3,7 @@ import { generatePrompt } from '../ai/generatePrompt';
 import { openai } from '../ai/openaiClient';
 import { generateSocialSummary } from '../utils/generateSocialSummary';
 import { Token } from '../types/token';
+import { sendToTelegram } from '../services/telegram';
 
 const router = Router();
 // model: 'gpt-4o-mini',
@@ -26,6 +27,15 @@ router.post('/', async (req, res) => {
       .replace(/\s*```$/, '');
 
     const parsed = JSON.parse(clean);
+
+    const msg = `
+🚀 *Pump Potential:* ${parsed.pump_potential}
+📊 *Confidence:* ${parsed.confidence_score}%
+💡 *Recommendation:* ${parsed.recommendation}
+🔗 *Token:* [${token.tokenAddress}](https://dexscreener.com/solana/${token.tokenAddress})
+`;
+
+    await sendToTelegram(msg);
 
     res.json(parsed);
   } catch (error) {

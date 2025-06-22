@@ -23,6 +23,13 @@ A fullstack application to scan trending Solana-based memecoins using the DexScr
 
 ---
 
+## 📬 Contact
+
+If you have questions or want to collaborate, reach me at:  
+**📧 orozulbaev@gmail.com**
+
+---
+
 ## 🚀 Quick Start
 
 ### 1. Clone the Repository
